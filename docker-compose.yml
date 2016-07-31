@@ -1,0 +1,26 @@
+version: "2"
+
+services:
+  base:
+    build: .
+    working_dir: /app
+    volumes:
+      - ./:/app
+
+  client:
+    extends: base
+    command: bash -c "gcc -Wall -Wpedantic -o client client.c && sleep 1 && ./client"
+    environment:
+      - HOST=server
+      - PORT=3000
+
+  server:
+    extends: base
+    command: bash -c "gcc -Wall -Wpedantic -o server server.c && ./server"
+    environment:
+      - PORT=3000
+
+  # server testing from netcat utility
+  netcat:
+    extends: base
+    command: bash -c "echo 'Hello world' | netcat server 3000 -w 1"

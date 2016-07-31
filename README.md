@@ -2,8 +2,7 @@
 
 Motivation: familiarize myself with _socket_ concept before starting to read [Understanding Linux Network Internals](http://shop.oreilly.com/product/9780596002558.do).
 
-
-## Demo
+## Demo [![Build Status](https://travis-ci.org/hi-ogawa/socket-programming-basics.svg?branch=master)](https://travis-ci.org/hi-ogawa/socket-programming-basics)
 
 ```
 -- show client/server interaction in one command --
@@ -22,7 +21,6 @@ socketprogramming_server_1 exited with code 0
 $ docker-compose down
 $ rm client server
 ```
-
 
 ## Notes
 
